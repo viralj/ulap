@@ -4,6 +4,7 @@ import psycopg2
 DATABASE_NAME = "news"
 
 
+# Database query function
 def query_db(query):
     ''' Makes a query to the news database '''
     db = psycopg2.connect(database=DATABASE_NAME)
@@ -19,8 +20,10 @@ def query_db(query):
 # the most popular article at the top.
 
 def three_most_popular_articles():
+    # To print information
     information_string = '1. The 3 most popular articles of all time are:\n'
 
+    # Query string
     query = "select title,count(*) as num from " \
             "articles,log where " \
             "log.path=CONCAT('/article/',articles.slug) " \
@@ -40,9 +43,11 @@ def three_most_popular_articles():
 #  Present this as a sorted list with the most popular
 #  author at the top.
 def most_popular_article_authors():
+    # To print information
     information_string = '2. The most popular article ' \
                          'authors of all time are:\n'
 
+    # Query string
     query = " select x.author , count(1) as qtd from (" \
             " SELECT b.name as author" \
             " FROM articles a join authors b on(a.author = b.id)" \
@@ -63,9 +68,11 @@ def most_popular_article_authors():
 # (Refer back to this lesson if you want to
 #  review the idea of HTTP status codes.)
 def days_with_request():
+    # To print information
     information_string = '3. Days with more than ' \
                          '1% of request that lead to an error:\n'
 
+    # Query string
     query = "select * from (select date(time)," \
             "round(100.0*sum(case log.status " \
             "when '200 OK'  then 0 else 1 end)/count(log.status),3)" \
