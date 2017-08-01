@@ -31,8 +31,6 @@ The log table includes a column status that indicates the HTTP status code that 
   2. Download or Clone [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) repository.
   3. Download the [data](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) from here.
   4. Unzip this file after downloading it. The file inside is called newsdata.sql.
-  5. Copy the newsdata.sql file and content of this current repository, by either downloading or cloning it from
-  [Here](https://github.com/sagarchoudhary96/Log-Analysis)
 
 Launch Vagrant VM by running `vagrant up` and log in with `vagrant ssh`.
 
